@@ -100,6 +100,7 @@ while (rodadas < 9)
     {
         Console.Write("Jogada inválida, tente novamente: ");
         jogada = Console.ReadLine();
+        rodadas--;
     }
     Console.WriteLine("PRIMEIRO JOGADOR: X | SEGUNDO JOGADOR: O");
     Console.WriteLine();
@@ -112,6 +113,7 @@ while (rodadas < 9)
                 tabuleiro[l, c] = simbolo;
                 numeros.Remove(jogada);
                 TrocaSimbolo();
+                rodadas++;
             }
         }
     }
@@ -130,7 +132,7 @@ while (rodadas < 9)
     }
     Console.Write("\nJogue {0} na posição desejada: ", simbolo);
     jogada = Console.ReadLine();
-    rodadas++;
+    
     VerificaVitoria();
     if (verifica == true)
     {
